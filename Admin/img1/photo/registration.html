@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1"/>
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" >
+	<script src="http://code.jquery.com/jquery-3.2.1.slim.min.js" ></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" ></script>
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" ></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/4.2.1/jquery.min.js"></script>
+<!-- <script type="text/javascript" src="adhaar.js"></script> -->
+<script type="text/javascript">
+	$('[data-type="adhaar-number"]').keyup(function(){
+	var value=$(this).val();
+	value=value.replace(/\D/g, "").split(/(?:([\d]{4}))/g).filter(s => s.length > 0).join("-");
+	$(this).val(value);
+});
+$('[data-type="adhaar-number"]').on("change, blur", function(){
+	var value = $(this).val();
+	var maxLength = $(this).attr("maxLenth");
+	if(value.length != maxLenth){
+		$(this).addClass("highlight-error");
+
+	}
+	else
+	{
+		$(this).removeClass("highlight-error");
+	}
+});
+$(document).ready(function(){
+$("p").hide();
+});
+
+</script>
+<style type="text/css">
+	.highlight-error{
+		border-color: red;
+	}
+
+   
+    
+</style>
+</head>
+<body class="container-fluid" style="background-image: url('img/new.jpg');background-repeat: no-repeat;background-size: 150%">
+    
+<form class="form-group mx-auto mt- shadow-lg" style="width:50%" action="registration_prs.php" method="post">
+	<h1 align="center">Registration</h1>
+		 <div>
+            <label for="firstname" class="col-md-2">
+                First Name:
+            </label>
+            <div class="col-md-9">
+                <input type="text" class=" form-group form-control" name="firstname" id="firstname" placeholder="Enter First Name">
+            </div>
+            <div class="col-md-1">
+                <i class="fa fa-lock fa-2x"></i>
+            </div>
+        </div>        
+        <div>
+            <label for="lastname" class="col-md-2">
+                Last Name:
+            </label>
+            <div class="col-md-9">
+                <input type="text" class=" form-group form-control" name="lastname" id="lastname" placeholder="Enter Last Name">
+            </div>
+             <div class="col-md-1">
+                <i class="fa fa-lock fa-2x"></i>
+            </div>
+        </div>
+         <div>
+            <label for="address" class="col-md-6">
+                Residential Address:
+            </label>
+         <div class="col-md-9">
+                <input type="text" class=" form-group form-control" name="addr" id="address" placeholder="Enter Residential Address">
+            </div>
+             <div class="col-md-1">
+                <i class="fa fa-lock fa-2x"></i>
+            </div>
+        </div>
+        <label for="Number" class="col-md-6">
+                Contact Number:
+            </label>
+         <div class="col-md-9">
+                <input type="Number" class=" form-group form-control" name="pnumber" id="Number" placeholder="Enter Contact Number">
+            </div>
+             <div class="col-md-6">
+                <i class="fa fa-lock fa-2x"></i>
+            </div>
+        </div>
+        <div>
+            <label for="emailaddress" class="col-md-6">
+                Email address:
+            </label>
+            <div class="col-md-9">
+                <input type="email" class=" form-group form-control" name="email" id="emailaddress" placeholder="Enter email address">
+                <p class="help-block">
+                    Example: yourname@domain.com
+                </p>
+            </div>
+             <div class="col-md-6">
+                <i class="fa fa-lock fa-2x"></i>
+            </div>
+        </div>
+        <div>
+            <label for="adhaar-number" class="col-md-6">
+               Adhar Number:
+            </label>
+            <div class="col-md-6">
+                <input type="text" data-type="adhaar-number" maxLength="19" name="adrno" class=" form-group form-control" id="Adhar" placeholder="Enter Adhaar Number">
+                 <p class="help-block">
+                    Example: xxxx-xxxx-xxxx-xxxx
+                </p>
+            </div>
+             <div class="col-md-6">
+                <i class="fa fa-lock fa-2x"></i>
+            </div>
+        </div>
+        <div>
+            <label for="sex" class="col-md-6">
+                Gender:
+            </label>
+            <div class="col-md-10">
+                <label class="radio">
+                    <input type="radio" id="male" name="gender" value="male" checked>
+                    Male
+                </label>
+                <label class="radio">
+                    <input type="radio"  id="female" name="gender" value="female">
+                    Female
+                </label>
+            </div>             
+        </div>
+        <div>
+            <label for="country" class="col-md-6">
+                Country:
+            </label>
+            <div class="col-md-9">
+                <select name="country" id="country" class="form-control">
+                    <option>--Please Select--</option>
+                    <option>India</option>
+                    <option>United States</option>
+                    <option>Canada</option>
+                    <option>United Kingdom</option>
+                    <option>Others</option>
+                </select>
+            </div>            
+        </div>
+        
+        <div>
+            <div class="col-md-6">
+            </div>
+            <div class="col-md-10">
+                <label>
+                    <input type="checkbox" name="check"> I hereby accept the terms and conditions for using this site</label>
+            </div>            
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+            </div>
+            <div class="col-md-10">
+                <button type="submit" class="btn btn-primary btn-block">
+
+                    Register
+                </button>
+            </div>
+        </div>
+
+
+		
+		<a href="index.html" class="btn btn-warning mt-2">Already regsitered?</a>
+	</form>
+</body>
+
+</html>

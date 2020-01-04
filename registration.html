@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1"/>
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" >
+	<script src="http://code.jquery.com/jquery-3.2.1.slim.min.js" ></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" ></script>
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" ></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/4.2.1/jquery.min.js"></script>
+<!-- <script type="text/javascript" src="adhaar.js"></script> -->
+<script type="text/javascript">
+// 	$('[data-type="adhaar-number"]').keyup(function(){
+// 	var value=$(this).val();
+// 	value=value.replace(/\D/g, "").split(/(?:([\d]{4}))/g).filter(s => s.length > 0).join("-");
+// 	$(this).val(value);
+// });
+// $('[data-type="adhaar-number"]').on("change, blur", function(){
+	// var value = $(this).val();
+	// var maxLength = $(this).attr("maxLenth");
+	// if(value.length != maxLenth){
+	// 	$(this).addClass("highlight-error");
+
+	// }
+	// else
+	// {
+	// 	$(this).removeClass("highlight-error");
+	// }
+// });
+$(document).ready(function(){
+$("p").hide();
+
+
+</script>
+<style type="text/css">
+	.highlight-error{
+		border-color: red;
+	}
+
+   
+    
+</style>
+</head>
+<body class="class="color-overlay container-fluid" style="background-image: url('img/portfolio/4.jpg');background-repeat: no-repeat;background-size: 150%">
+    
+<form class="form-group mx-auto mt- shadow-lg" style=" width:50%" action="rigister.php" method="post"><?= $_SESSION['message'] ?>
+   </div>
+      <!-- <div class="item" style="background-image: url(img/portfolio/main-02.jpg)"> -->
+	<h1 align="center">Registration</h1>
+		 <div>
+            <label for="firstname" class="col-md-2">
+               <b> First Name:</b>
+            </label>
+            <div class="col-md-9 alert alert-error">
+                <input type="text" class=" form-group form-control" name="firstname" id="firstname" placeholder="Enter First Name" required>
+            </div>
+            <div class="col-md-1">
+                <i class="fa fa-lock fa-2x"></i>
+            </div>
+        </div>        
+        <div>
+            <label for="lastname" class="col-md-2">
+               <b> Last Name:</b>
+            </label>
+            <div class="col-md-9 alert alert-error">
+                <input type="text" class=" form-group form-control" name="lastname" id="lastname" placeholder="Enter Last Name" required>
+            </div>
+             <div class="col-md-1">
+                <i class="fa fa-lock fa-2x"></i>
+            </div>
+        </div>
+         <div>
+            <label for="address" class="col-md-6">
+               <b> Residential Address:</b>
+            </label>
+         <div class="col-md-9 alert alert-error">
+                <input type="text" class=" form-group form-control" name="addr" id="address" placeholder="Enter Residential Address" required>
+            </div>
+             <div class="col-md-1">
+                <i class="fa fa-lock fa-2x"></i>
+            </div>
+        </div>
+        <label for="Number" class="col-md-6">
+              <b>  Contact Number:</b>
+            </label>
+         <div class="col-md-9 alert alert-error">
+
+      <input type="text" class=" form-group form-control" name="pnumber" id="Number" pattern="[6-9]{1}[0-9]{9}" required>
+      </div>
+                
+             <div class="col-md-6">
+                <i class="fa fa-lock fa-2x"></i>
+            </div>
+      
+        <div>
+            <label for="emailaddress" class="col-md-6">
+                <b>Email address:</b>
+            </label>
+            <div class="col-md-9 alert-error">
+                <input type="email" class=" form-group form-control" name="email" id="emailaddress" placeholder="Enter email address" required>
+                <p class="help-block">
+                   <b> Example: yourname@domain.com</b>
+                </p>
+            </div>
+             <div class="col-md-6">
+                <i class="fa fa-lock fa-2x"></i>
+            </div>
+        </div>
+        <!-- <div>
+            <label for="adhaar-number" class="col-md-6">
+               Adhar Number:
+            </label>
+            <div class="col-md-6">
+                <input type="text" data-type="adhaar-number" maxLength="19" name="adrno" class=" form-group form-control" id="Adhar" placeholder="Enter Adhaar Number">
+                 <p class="help-block">
+                    Example: xxxx-xxxx-xxxx-xxxx
+                </p>
+            </div>
+             <div class="col-md-6">
+                <i class="fa fa-lock fa-2x"></i>
+            </div>
+        </div> -->
+       
+        <div>
+            <label for="sex" class="col-md-6">
+               <b> Gender:</b>
+            </label>
+            <div class="col-md-10">
+                <label class="radio alert alert-error">
+                    <input type="radio" id="male" name="gender" value="male" checked>
+                  <b>  Male</b>
+                </label>
+                <label class="radio alert alert-error">
+                    <input type="radio"  id="female" name="gender" value="female">
+                   <b> Female</b>
+                </label>
+            </div>             
+        </div>
+       <!--  <div>
+            <label for="Category" class="col-md-6">
+                Category:
+            </label>
+            <div class="col-md-9 alert alert-error">
+                <select name="category" id="category" class="form-control">
+                    <option value="1">--Please Select--</option>
+                    <option value="2">Wedding</option>
+                    <option value="3">Nature</option>
+                    <option value="4">Sports</option>
+                    <option value="5">Food</option>
+                    <option value="6">WildeLife</option>
+                    <option value="7">Landscape</option>
+                    <option value="8">Fashion</option>
+                    
+                   
+                </select>  </div>            
+       <!--  </div> -->
+    <!-- INSERT INTO `photo`.`category` (`cat_id`, `cat_name`) VALUES ('1', 'Wedding'); --> 
+        
+       <!--  <div>
+            <div class="col-md-6">
+            </div>
+            <div class="col-md-10">
+                <label>
+                    <input type="checkbox" name="check"> I hereby accept the terms and conditions for using this site</label>
+            </div>            
+        </div> -->
+        <div class="row">
+            <div class="col-md-6 mt-2">
+            </div>
+            <div class="col-md-10">
+               <!--  <button type="submit" class="btn btn-primary btn-block">
+
+                    Register
+                </button> -->
+                <button name=submit value=submit class="btn btn-primary mt-2 btn-block">
+                    Register</button>
+            </div>
+        </div>
+
+
+		
+		<a href="index.html" class="btn btn-warning mt-2">Already regsitered?</a>
+   </div>
+	</form>
+</body>
+
+</html>
